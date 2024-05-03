@@ -1,20 +1,21 @@
 import pytest
 import os
 import sys
+
 sys.path.append("..")
-from app.storage import retrieve_environment_variables,get_files_list
+from app.storage import retrieve_environment_variables, get_files_list
+
 
 @pytest.fixture
 def mock_environment_variables():
     os.environ["ENVIRONMENT"] = "TEST"
     os.environ["INPUT_RELATIVE_PATH"] = "../tests/data/input/"
     os.environ["OUTPUT_RELATIVE_PATH"] = "../tests/data/output/"
-    yield  
+    yield
 
     del os.environ["ENVIRONMENT"]
     del os.environ["INPUT_RELATIVE_PATH"]
     del os.environ["OUTPUT_RELATIVE_PATH"]
-
 
 
 def test_retrieve_environment_variables(mock_environment_variables):

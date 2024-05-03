@@ -51,7 +51,7 @@ def parse_file(file_path: str, env_info: InformationFromEnv):
         env_info (InformationFromEnv): An object containing environment-related information.
     """
 
-    file_name = os.path.basename(file_path)
+    file_name = "output_" + os.path.basename(file_path)
     output = os.path.join(env_info.output_path, file_name)
     if os.path.exists(output):
         os.remove(output)
@@ -65,6 +65,6 @@ def parse_file(file_path: str, env_info: InformationFromEnv):
         df.to_csv(
             output, index=False, sep="\t", mode="a", header=not os.path.exists(output)
         )
-        logging.info(f"Processed file is present in the {output} directory")
+        logging.info(f"Processed file is present is stored here: {output}")
     if env_info.env == "prod":
         move_file_to_processed_directory(file_path)

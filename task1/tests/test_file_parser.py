@@ -1,7 +1,9 @@
 import pytest
 import sys
-sys.path.append('./app')
+
+sys.path.append("./app")
 from app.file_parser import map_url_params_to_columns
+
 
 def test_map_url_params_to_columns():
     url = "http://example.com?a_bucket=1&a_type=2&a_source=3&a_v=4&a_g_campaignid=5&a_g_keyword=6&a_g_adgroupid=7&a_g_creative=8"
