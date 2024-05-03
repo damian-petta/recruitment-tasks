@@ -1,1 +1,3 @@
-task1/gcs/*/output/*
+task1/gcs/*/output/
+task1/app/*__pycache__
+*.venv/
