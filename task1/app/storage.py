@@ -36,7 +36,7 @@ def retrieve_environment_variables() -> InformationFromEnv:
     return InformationFromEnv(
         env=os.getenv("ENVIRONMENT", "DEV").lower(),
         input_path=input_path,
-        file_extension="tsv", # I primarily thought that I'll find a better use case for that 
+        file_extension="tsv",  # I primarily thought that I'll find a better use case for that
         output_path=output_path,
     )
 
