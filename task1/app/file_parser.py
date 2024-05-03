@@ -2,7 +2,7 @@ import os
 from urllib.parse import urlparse, parse_qs
 import pandas as pd
 from storage import InformationFromEnv, move_file_to_processed_directory
-
+import logging
 
 SCHEMA_MAPPING = {
     "a_bucket": "ad_bucket",
@@ -65,6 +65,6 @@ def parse_file(file_path: str, env_info: InformationFromEnv):
         df.to_csv(
             output, index=False, sep="\t", mode="a", header=not os.path.exists(output)
         )
-
-    if env_info.env == "dev":
+        logging.info(f"Processed file is present in the {output} directory")
+    if env_info.env == "prod":
         move_file_to_processed_directory(file_path)
