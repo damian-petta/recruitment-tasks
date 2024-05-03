@@ -20,7 +20,7 @@ def retrieve_environment_variables() -> InformationFromEnv:
     current_directory = os.path.dirname(os.path.abspath(__file__))
 
     # Since it's only for the recruitment task and we don't have any GCS/S3 bucket available we need operate on the local storage
-    # and those 4 extra steps are only to make sure we take the data from the proper directory
+    # so, those 4 extra steps are only to make sure we take the data from the proper directory
 
     input_relative_path = os.getenv("INPUT_RELATIVE_PATH", "../gcs/dev/input/")
     input_path = os.path.normpath(os.path.join(current_directory, input_relative_path))
@@ -36,7 +36,7 @@ def retrieve_environment_variables() -> InformationFromEnv:
     return InformationFromEnv(
         env=os.getenv("ENVIRONMENT", "DEV").lower(),
         input_path=input_path,
-        file_extension="tsv",
+        file_extension="tsv", # I primarily thought that I'll find a better use case for that 
         output_path=output_path,
     )
 

@@ -16,7 +16,7 @@ def main():
         try:
             parse_file(file, envinfo)
         except Exception as e:
-            # In case one file in folder be corrupted we still can parse others and show errors at the end of process
+            # In case file in folder be corrupted we could still try to parse other files and just show all errors at the end of process
             errors.append(f"\n FILE: {file} \n ERROR MESSAGE: {e}")
 
     if len(errors) > 0:
