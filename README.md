@@ -1,2 +1,3 @@
 # recruitment-tasks
-tbd
+
+This repository contains my solutions for the tasks for the Tidio recruitment for a Junior Data Engineer position. Both the ./task1 and ./task2 folders contain solutions for the given tasks, and you can also find a more task-specific readme in both :). Just fyi, I tried to keep a 6-hour deadline, so things that I haven't implemented due to lack of time are also mentioned in the readmes.

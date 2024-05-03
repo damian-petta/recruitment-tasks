@@ -1,0 +1,5 @@
+version: 2
+
+seeds:
+  - name: project_properties_values
+  - name: project_properties
